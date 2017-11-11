@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/huracan_spyder"
+
     tools:context="endlessrunner.nik.uniobuda.hu.endlessrunner.MainActivity">
 
 
@@ -13,11 +13,13 @@
         android:id="@+id/StartGameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Start Game"
-        android:textAllCaps="false"
+        android:layout_above="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginBottom="83dp"
         android:background="@android:color/holo_green_dark"
-        />
+        android:text="Start Game"
+        android:onClick="StartGame"
+        android:textAllCaps="false" />
 
     <Button
         android:layout_width="wrap_content"
@@ -27,15 +29,16 @@
         android:text="Highscore"
         android:textAllCaps="false"
         android:background="@android:color/holo_orange_light"
-
-        />
+        android:onClick="HighScore"
+        android:id="@+id/button" />
 
     <Button
-        android:background="@android:color/holo_red_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@+id/button"
+        android:layout_below="@+id/button"
+        android:layout_marginTop="77dp"
+        android:background="@android:color/holo_red_dark"
         android:text="'Exit"
         android:textAllCaps="false" />
 
