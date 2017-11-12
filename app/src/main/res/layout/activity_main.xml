@@ -41,6 +41,7 @@
         android:layout_marginTop="77dp"
         android:background="@android:color/holo_red_dark"
         android:text="'Exit"
+        android:onClick="ExitGame"
         android:textAllCaps="false" />
 
 

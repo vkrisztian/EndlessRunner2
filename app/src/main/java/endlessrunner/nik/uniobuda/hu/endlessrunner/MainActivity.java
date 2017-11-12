@@ -37,14 +37,28 @@ public class MainActivity extends AppCompatActivity {
                 EditText et = (EditText) dialog1.findViewById(R.id.userName);
                 username = et.getText().toString();
                 dialog1.dismiss();
+                createGameActivity();
             }
         });
 
 
     }
 
+    private void createGameActivity() {
+        Intent sg = new Intent(this,GameActivity.class);
+        sg.putExtra("username",username);
+        startActivity(sg);
+    }
+
     public void HighScore(View view) {
         Intent hs = new Intent(this,HighScoreActivity.class);
         startActivity(hs);
+    }
+
+    public void ExitGame(View view) {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
