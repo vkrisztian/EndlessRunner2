@@ -14,8 +14,8 @@ public class Track
     List<Enemy> enemies = new ArrayList<Enemy>();
 
 
-    public Track(String usrName )
+    public Track(String usrName ,int y)
     {
-        this.usrCar = new UserCar(usrName,1);
+        this.usrCar = new UserCar(usrName,1,y);
     }
 }

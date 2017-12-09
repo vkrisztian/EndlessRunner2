@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -39,16 +40,33 @@ public class MainActivity extends AppCompatActivity {
                 dialog1.dismiss();
                 Intent game = new Intent(MainActivity.this,GameActivity.class);
                 game.putExtra("usrname",username);
-                startActivity(game);
+                startActivityForResult(game,1);
+
             }
         });
 
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                String usrName = data.getStringExtra("usr");
+                Integer highscore = data.getIntExtra("high",0);
+                Toast tt = Toast.makeText(getApplicationContext(),"New Score : "+highscore+"Gratula "+usrName,Toast.LENGTH_LONG);
+                tt.show();
+            }
+        }
+
+    }
+
     public void HighScore(View view) {
        Intent hs = new Intent(this,HighScoreActivity.class);
-
         startActivity(hs);
+
     }
 }

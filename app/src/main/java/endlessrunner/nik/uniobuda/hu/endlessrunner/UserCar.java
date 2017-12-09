@@ -8,9 +8,10 @@ public class UserCar extends Car {
     byte carPositionColumn;
     User usr;
 
-    public UserCar(String userName,int clm ){
+    public UserCar(String userName,int clm,int y ){
         super(clm);
         this.usr = new User(userName);
+        this.y=y;
     }
 
 
