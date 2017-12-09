@@ -13,8 +13,9 @@ public class Track
     UserCar usrCar;
     List<Enemy> enemies = new ArrayList<Enemy>();
 
+
     public Track(String usrName )
     {
-        this.usrCar = new UserCar(usrName,(byte)1,Color.blue);
+        this.usrCar = new UserCar(usrName,1);
     }
 }

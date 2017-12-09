@@ -1,5 +1,9 @@
 package endlessrunner.nik.uniobuda.hu.endlessrunner;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Point;
+
 /**
  * Created by Noxim on 2017-11-12.
  */
@@ -14,16 +18,20 @@ public class Enemy extends Car {
         this.speed = speed;
     }
 
-    public int getLine() {
-        return line;
-    }
 
-    int line;
 
     double speed;
-    public Enemy(byte clm, Color clr, int line) {
-        super(clm, clr);
-        this.speed = 20;
-        this.line = line;
+
+    public Enemy(int line,int Highscore) {
+        super(line);
+
+        this.speed = 10+Highscore/100;
+
+    }
+
+
+    public void move(int Highscore)
+    {
+        this.y+=speed;
     }
 }

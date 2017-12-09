@@ -19,7 +19,7 @@ public class GameActivity extends AppCompatActivity {
             usr = "default";
         }
         trck = new Track(usr);
-        canvas = new Game_Layout_Canvas(GameActivity.this   );
+        canvas = new Game_Layout_Canvas(GameActivity.this,trck);
 
         setContentView(canvas);
     }
