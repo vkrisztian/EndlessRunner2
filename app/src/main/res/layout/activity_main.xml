@@ -28,6 +28,7 @@
         android:layout_centerVertical="true"
         android:text="Highscore"
         android:textAllCaps="false"
+
         android:background="@android:color/holo_orange_light"
         android:onClick="HighScore"
         android:id="@+id/button" />
@@ -40,6 +41,7 @@
         android:layout_marginTop="77dp"
         android:background="@android:color/holo_red_dark"
         android:text="'Exit"
+        android:onClick="ExitGame"
         android:textAllCaps="false" />
 
 
