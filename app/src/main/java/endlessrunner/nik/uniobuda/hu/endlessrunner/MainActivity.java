@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
                 EditText et = (EditText) dialog1.findViewById(R.id.userName);
                 username = et.getText().toString();
                 dialog1.dismiss();
+                Intent game = new Intent(MainActivity.this,GameActivity.class);
+                startActivity(game);
             }
         });
 
@@ -44,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void HighScore(View view) {
-        Intent hs = new Intent(this,HighScoreActivity.class);
+       Intent hs = new Intent(this,HighScoreActivity.class);
+
         startActivity(hs);
     }
 }
