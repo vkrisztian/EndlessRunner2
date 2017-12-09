@@ -28,6 +28,7 @@ public class Game_Layout_Canvas extends View{
     Bitmap enemy;
     Bitmap enemy2;
     Bitmap enemy3;
+    Bitmap user;
     boolean drawable = false;
     Track track;
     Point size;
@@ -45,6 +46,7 @@ public class Game_Layout_Canvas extends View{
         Bitmap tempenemy = BitmapFactory.decodeResource(getResources(),R.mipmap.nmy1);
         Bitmap tempenemy2 = BitmapFactory.decodeResource(getResources(),R.mipmap.nmy2);
         Bitmap tempenemy3 = BitmapFactory.decodeResource(getResources(),R.mipmap.nmy3);
+        Bitmap tempuser = BitmapFactory.decodeResource(getResources(),R.mipmap.user);
 
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
@@ -55,6 +57,7 @@ public class Game_Layout_Canvas extends View{
         enemy = Bitmap.createScaledBitmap(tempenemy,size.x/9,200,true);
         enemy2 = Bitmap.createScaledBitmap(tempenemy2,size.x/9,200,true);
         enemy3 = Bitmap.createScaledBitmap(tempenemy3,size.x/9,200,true);
+        user = Bitmap.createScaledBitmap(tempuser,size.x/9,200,true);
 
         Enemy en1 = new Enemy(0,track.usrCar.usr.getHighscore());
         track.enemies.add(en1);
@@ -106,10 +109,10 @@ public class Game_Layout_Canvas extends View{
             }
             else
                 selected = item;
-
         }
         if(selected != null)
             track.enemies.remove(selected);
+       canvas.drawBitmap(user,canvas.getWidth() / 3 + canvas.getWidth()/9 * track.usrCar.getLine(),canvas.getHeight()-200,new Paint());
 
 
         canvas.drawText("Score: "+track.usrCar.usr.getHighscore(),50,100,clr);
