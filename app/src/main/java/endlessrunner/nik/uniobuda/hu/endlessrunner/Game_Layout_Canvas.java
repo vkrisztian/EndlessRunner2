@@ -33,6 +33,8 @@ public class Game_Layout_Canvas extends View{
         clr.setColor(Color.BLACK);
         Rect proba = new Rect(100,100,200,200);
         canvas.drawRect(proba,clr);
+
+        invalidate();
     }
 
 
