@@ -14,9 +14,16 @@ public class Enemy extends Car {
         this.speed = speed;
     }
 
+    public int getLine() {
+        return line;
+    }
+
+    int line;
+
     double speed;
-    public Enemy(byte clm, Color clr) {
+    public Enemy(byte clm, Color clr, int line) {
         super(clm, clr);
         this.speed = 20;
+        this.line = line;
     }
 }

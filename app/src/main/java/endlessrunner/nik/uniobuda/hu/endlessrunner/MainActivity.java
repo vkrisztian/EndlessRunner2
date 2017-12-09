@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 username = et.getText().toString();
                 dialog1.dismiss();
                 Intent game = new Intent(MainActivity.this,GameActivity.class);
+                game.putExtra("usrname",username);
                 startActivity(game);
             }
         });
