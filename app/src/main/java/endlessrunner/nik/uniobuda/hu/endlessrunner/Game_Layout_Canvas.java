@@ -124,6 +124,7 @@ public class Game_Layout_Canvas extends View {
 
             if (item.getY() <= canvas.getHeight()-50) {
                 item.move(track.usrCar.usr.getHighscore());
+                
                 switch (item.getLine()) {
                     case 0:
                         canvas.drawBitmap(enemy, canvas.getWidth() / 3 + (canvas.getWidth() / 9 * item.getLine()), item.getY(), new Paint());

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         dialog1.show();
         Button OKButton = (Button) dialog1.findViewById(R.id.okbutton);
-        OKButton.setOnClickListener(new View.OnClickListener() {
+        OKButton.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText et = (EditText) dialog1.findViewById(R.id.userName);

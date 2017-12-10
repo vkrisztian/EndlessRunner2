@@ -25,13 +25,13 @@ public class Enemy extends Car {
     public Enemy(int line,int Highscore) {
         super(line);
 
-        this.speed = 5+Highscore/100;
+        this.speed = 5;
 
     }
 
 
     public void move(int Highscore)
     {
-        this.y+=speed;
+        this.y+=speed+Highscore/100;
     }
 }
