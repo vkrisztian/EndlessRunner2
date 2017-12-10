@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 String usrName = data.getStringExtra("usr");
                 Integer highscore = data.getIntExtra("high",0);
-                Toast tt = Toast.makeText(getApplicationContext(),"New Score : "+highscore+"Gratula "+usrName,Toast.LENGTH_LONG);
+                Toast tt = Toast.makeText(getApplicationContext(),"New Score : "+highscore+" Congrats:  "+usrName,Toast.LENGTH_LONG);
                 tt.show();
             }
         }

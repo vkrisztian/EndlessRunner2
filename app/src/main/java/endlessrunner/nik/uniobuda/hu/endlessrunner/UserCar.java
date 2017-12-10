@@ -5,7 +5,6 @@ package endlessrunner.nik.uniobuda.hu.endlessrunner;
  */
 
 public class UserCar extends Car {
-    byte carPositionColumn;
     User usr;
 
     public UserCar(String userName,int clm,int y ){
@@ -16,12 +15,12 @@ public class UserCar extends Car {
 
 
     public void MoveLeft() {
-        if (this.carPositionColumn != 0)
-            this.carPositionColumn--;
+        if (this.columnPosition!= 0)
+            this.columnPosition--;
     }
 
     public void MoveRight() {
-        if (this.carPositionColumn != 2)
-            this.carPositionColumn++;
+        if (this.columnPosition != 2)
+            this.columnPosition++;
     }
 }

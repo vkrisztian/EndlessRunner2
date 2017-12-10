@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.Display;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -26,7 +28,8 @@ interface EndsListener{
 
     void onEnd(User usr);
 }
-public class Game_Layout_Canvas extends View {
+public class Game_Layout_Canvas extends View{
+
 
     Paint clr = new Paint();
     Bitmap road;
@@ -82,12 +85,6 @@ public class Game_Layout_Canvas extends View {
 
         Enemy en1 = new Enemy(0, track.usrCar.usr.getHighscore());
         track.enemies.add(en1);
-
-        Enemy en2 = new Enemy(1, track.usrCar.usr.getHighscore());
-        track.enemies.add(en2);
-        Enemy en3 = new Enemy(2, track.usrCar.usr.getHighscore());
-        track.enemies.add(en3);
-
     }
 
 
@@ -111,7 +108,7 @@ public class Game_Layout_Canvas extends View {
         canvas.drawBitmap(road, 0, 0, new Paint());
         for (Enemy item : track.enemies) {
 
-            if (item.getY() <= canvas.getHeight()) {
+            if (item.getY() <= canvas.getHeight()-50) {
                 item.move(track.usrCar.usr.getHighscore());
                 switch (item.getLine()) {
                     case 0:
@@ -178,4 +175,7 @@ public class Game_Layout_Canvas extends View {
     public void onResume() {
         drawable = true;
     }
+
+
+
 }
