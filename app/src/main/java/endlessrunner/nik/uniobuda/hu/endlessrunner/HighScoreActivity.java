@@ -38,8 +38,7 @@ public class HighScoreActivity extends AppCompatActivity {
         String filename = "DataEndless.txt";
 
         loadFile();
-        Users.add(new User("józsi",122));
-        Users.add(new User("józsi1",12112));
+
         Collections.sort(Users, new Comparator<User>() {
             @Override
             public int compare(User o1, User o2) {

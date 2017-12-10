@@ -47,10 +47,6 @@ public class GameActivity extends AppCompatActivity  {
                         {
                             canvas.track.usrCar.MoveLeft();
                         }
-                        else
-                        {
-                            // consider as something else - a screen tap for example
-                        }
                         break;
                 }
                 return true;

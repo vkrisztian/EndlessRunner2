@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 String filename = "DataEndless.txt";
                 FileOutputStream outputStream;
                 try {
-                    outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+                    outputStream = openFileOutput(filename, Context.MODE_APPEND);
                     OutputStreamWriter osw = new OutputStreamWriter(outputStream);
                     osw.write(usr.getUserName()+"-"+usr.getHighscore()+"\n");
                     osw.flush();
