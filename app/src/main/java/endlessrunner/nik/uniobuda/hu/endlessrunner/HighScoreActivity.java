@@ -30,22 +30,12 @@ public class HighScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_high_score_activity);
 
         String filename = "DataEndless.txt";
-        String string = "Név-1111";
-        FileOutputStream outputStream;
 
-        try {
-            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-            OutputStreamWriter osw = new OutputStreamWriter(outputStream);
-            osw.write(string);
-            osw.flush();
-            osw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         loadFile();
 
         TextView tv = (TextView) findViewById(R.id.User1);
+
         User us = Users.get(0);
         tv.setText(us.getUserName()+" "+us.getHighscore());
 

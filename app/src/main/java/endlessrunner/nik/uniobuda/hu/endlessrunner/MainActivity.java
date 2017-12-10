@@ -1,5 +1,6 @@
 package endlessrunner.nik.uniobuda.hu.endlessrunner;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -12,9 +13,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+
 
 public class MainActivity extends AppCompatActivity {
     private String username;
+    User usr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +64,23 @@ public class MainActivity extends AppCompatActivity {
                 Integer highscore = data.getIntExtra("high",0);
                 Toast tt = Toast.makeText(getApplicationContext(),"New Score : "+highscore+" Congrats:  "+usrName,Toast.LENGTH_LONG);
                 tt.show();
+                usr = new User(usrName,highscore);
+
+
+                //innentől menti az adatokat
+                String filename = "DataEndless.txt";
+                FileOutputStream outputStream;
+                try {
+                    outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+                    OutputStreamWriter osw = new OutputStreamWriter(outputStream);
+                    osw.write(usr.getUserName()+"-"+usr.getHighscore()+"/n");
+                    osw.flush();
+                    osw.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+
         }
 
     }
