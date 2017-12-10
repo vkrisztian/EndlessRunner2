@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
                     OutputStreamWriter osw = new OutputStreamWriter(outputStream);
-                    osw.write(usr.getUserName()+"-"+usr.getHighscore()+"/n");
+                    osw.write(usr.getUserName()+"-"+usr.getHighscore()+"\n");
                     osw.flush();
                     osw.close();
                 } catch (Exception e) {

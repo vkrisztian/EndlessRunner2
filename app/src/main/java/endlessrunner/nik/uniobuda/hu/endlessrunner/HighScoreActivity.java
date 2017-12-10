@@ -4,6 +4,10 @@ import android.content.Context;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -16,6 +20,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.StreamTokenizer;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -31,13 +37,24 @@ public class HighScoreActivity extends AppCompatActivity {
 
         String filename = "DataEndless.txt";
 
-
         loadFile();
+        Users.add(new User("józsi",122));
+        Users.add(new User("józsi1",12112));
+        Collections.sort(Users, new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return o1.compareTo(o2);
+            }
+        });
 
-        TextView tv = (TextView) findViewById(R.id.User1);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(layoutManager);
+        UserRecycleAdapter userRecycleAdapter = new UserRecycleAdapter(Users);
+        recyclerView.setAdapter(userRecycleAdapter);
 
-        User us = Users.get(0);
-        tv.setText(us.getUserName()+" "+us.getHighscore());
+
 
 
 
