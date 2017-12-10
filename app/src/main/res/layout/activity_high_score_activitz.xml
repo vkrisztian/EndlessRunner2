@@ -4,20 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_centerHorizontal="true"
     tools:context="endlessrunner.nik.uniobuda.hu.endlessrunner.HighScoreActivity">
 
     <TextView
-        android:id="@+id/UserH"
+        android:id="@+id/User1"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="Jozsi"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="125dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Jozsi egy zseni akit nem ért meg senki" />
+
     <TextView
-        android:id="@+id/UserScore"
+        android:id="@+id/User2"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:text="155500"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
+    <TextView
+        android:id="@+id/User3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
+    <TextView
+        android:id="@+id/User4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
+    <TextView
+        android:id="@+id/User5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
+    <TextView
+        android:id="@+id/User6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
+    <TextView
+        android:id="@+id/User7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
+    <TextView
+        android:id="@+id/User8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
+    <TextView
+        android:id="@+id/User9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
+    <TextView
+        android:id="@+id/User10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Jozsi" />
+
 </LinearLayout>

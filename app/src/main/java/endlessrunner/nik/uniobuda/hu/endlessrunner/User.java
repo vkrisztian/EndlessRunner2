@@ -29,4 +29,10 @@ public class User
         this.userName = userName;
         this.highscore=0;
     }
+
+    public User(String usrname,int Hs)
+    {
+        this.userName = usrname;
+        this.highscore = Hs;
+    }
 }
