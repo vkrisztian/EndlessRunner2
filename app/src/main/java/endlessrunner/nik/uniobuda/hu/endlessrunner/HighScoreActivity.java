@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.StreamTokenizer;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -26,10 +27,10 @@ public class HighScoreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_high_score_activitz);
+        setContentView(R.layout.activity_high_score_activity);
 
         String filename = "DataEndless.txt";
-        String string = "Név-1111;";
+        String string = "Név-1111";
         FileOutputStream outputStream;
 
         try {
@@ -53,7 +54,13 @@ public class HighScoreActivity extends AppCompatActivity {
     }
 
     public void loadFile() {
-        Users.clear();
+        if (Users!= null) {
+            Users.clear();
+        }
+        else
+        {
+          Users  = new ArrayList<>();
+        }
         File file = getApplicationContext().getFileStreamPath("DataEndless.txt");
         String LineFromData;
         if (file.exists())
@@ -63,7 +70,7 @@ public class HighScoreActivity extends AppCompatActivity {
                 while ((LineFromData = br.readLine()) != null)
                 {
                     StringTokenizer st = new StringTokenizer(LineFromData,"-");
-                    User usr = new User(st.nextToken(),Integer.getInteger(st.nextToken()));
+                    User usr = new User(st.nextToken(),Integer.parseInt(st.nextToken()));
                     Users.add(usr);
                 }
                 br.close();
