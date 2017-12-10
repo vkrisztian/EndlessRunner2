@@ -1,6 +1,11 @@
 package endlessrunner.nik.uniobuda.hu.endlessrunner;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.net.sip.SipSession;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,12 +15,14 @@ import android.view.View;
 
 import java.util.EventListener;
 
-public class GameActivity extends AppCompatActivity  {
+public class GameActivity extends AppCompatActivity implements SensorEventListener  {
 
     Game_Layout_Canvas canvas;
     Track trck;
     String usr;
     float x1,x2;
+    SensorManager sensorManager;
+    Sensor mySensor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +33,10 @@ public class GameActivity extends AppCompatActivity  {
         else {
             usr = "default";
         }
-
         canvas = new Game_Layout_Canvas(GameActivity.this,usr);
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        mySensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(this,mySensor,SensorManager.SENSOR_DELAY_NORMAL);
         canvas.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -74,8 +83,19 @@ public class GameActivity extends AppCompatActivity  {
     @Override
     protected void onResume() {
         super.onResume();
+
         canvas.onResume();
     }
 
 
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+//        if (event.values[0] < -5)
+//            trck.usrCar.MoveRight();
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
 }
