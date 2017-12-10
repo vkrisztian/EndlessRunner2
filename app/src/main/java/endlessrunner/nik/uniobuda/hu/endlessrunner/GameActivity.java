@@ -18,17 +18,18 @@ import java.util.EventListener;
 public class GameActivity extends AppCompatActivity implements SensorEventListener  {
 
     Game_Layout_Canvas canvas;
-    Track trck;
     String usr;
     float x1,x2;
     SensorManager sensorManager;
     Sensor mySensor;
+    boolean sensorOn = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle extras = getIntent().getExtras();
         if(extras!=null) {
             usr = extras.getString("usrname");
+            sensorOn = extras.getBoolean("sensor");
         }
         else {
             usr = "default";
@@ -37,6 +38,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mySensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this,mySensor,SensorManager.SENSOR_DELAY_NORMAL);
+
         canvas.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -90,8 +92,15 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-//        if (event.values[0] < -5)
-//            trck.usrCar.MoveRight();
+        if(sensorOn) {
+            if (event.values[0] < -2f) {
+                canvas.track.usrCar.MoveRight();
+            } else if (event.values[0] > 2f) {
+                canvas.track.usrCar.MoveLeft();
+            } else if (event.values[0] > -1.5f && event.values[0] < 1.5f) {
+                canvas.track.usrCar.MoveCenter();
+            }
+        }
     }
 
     @Override

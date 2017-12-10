@@ -41,10 +41,10 @@ public class User implements Comparable<User>
     @Override
     public int compareTo(@NonNull User o) {
         if (this.highscore > o.getHighscore()) {
-            return 1;
+            return -1;
         }
         else if (this.highscore < o.getHighscore()) {
-            return -1;
+            return 1;
         }
         else return 0;
     }

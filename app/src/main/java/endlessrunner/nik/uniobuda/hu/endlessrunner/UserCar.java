@@ -23,4 +23,8 @@ public class UserCar extends Car {
         if (this.columnPosition != 2)
             this.columnPosition++;
     }
+    public void MoveCenter()
+    {
+        this.columnPosition = 1;
+    }
 }

@@ -20,6 +20,7 @@ import java.io.OutputStreamWriter;
 public class MainActivity extends AppCompatActivity {
     private String username;
     User usr;
+    boolean sensorOn = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 dialog1.dismiss();
                 Intent game = new Intent(MainActivity.this,GameActivity.class);
                 game.putExtra("usrname",username);
+                game.putExtra("sensor",sensorOn);
                 startActivityForResult(game,1);
 
             }
@@ -88,6 +90,21 @@ public class MainActivity extends AppCompatActivity {
     public void HighScore(View view) {
        Intent hs = new Intent(this,HighScoreActivity.class);
         startActivity(hs);
+
+    }
+
+    public void sensorOn(View view) {
+        if (sensorOn)
+        {
+            Button btn = (Button) findViewById(R.id.sensor);
+            btn.setText("Sensor: OFF");
+            sensorOn = !sensorOn;
+        }
+        else{
+            Button btn = (Button) findViewById(R.id.sensor);
+            btn.setText("Sensor: ON");
+            sensorOn = !sensorOn;
+        }
 
     }
 }

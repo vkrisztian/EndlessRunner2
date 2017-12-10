@@ -9,6 +9,8 @@ import android.graphics.Paint;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.support.annotation.Nullable;
+import android.util.AttributeSet;
 import android.view.Display;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -28,7 +30,7 @@ interface EndsListener{
 
     void onEnd(User usr);
 }
-public class Game_Layout_Canvas extends View{
+public class Game_Layout_Canvas extends View {
 
 
     Paint clr = new Paint();
@@ -45,7 +47,19 @@ public class Game_Layout_Canvas extends View{
 
     private EndsListener local;
 
+    public Game_Layout_Canvas(Context context) {
+        super(context);
 
+    }
+
+    public Game_Layout_Canvas(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+
+    }
+
+    public Game_Layout_Canvas(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
 
     public void setEndsListener(EndsListener endsListener){
         this.local = endsListener;

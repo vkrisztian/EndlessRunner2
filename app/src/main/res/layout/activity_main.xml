@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button"
-        android:layout_alignStart="@+id/button"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="83dp"
         android:background="@android:color/holo_green_dark"
         android:text="Start Game"
@@ -32,6 +32,18 @@
         android:background="@android:color/holo_orange_light"
         android:onClick="HighScore"
         android:id="@+id/button" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button"
+        android:layout_marginTop="83dp"
+        android:text="Sensor: OFF"
+        android:textAllCaps="false"
+
+        android:background="@android:color/holo_red_dark"
+        android:onClick="sensorOn"
+        android:id="@+id/sensor" />
 
 
 </RelativeLayout>
