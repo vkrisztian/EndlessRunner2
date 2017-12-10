@@ -1,10 +1,12 @@
 package endlessrunner.nik.uniobuda.hu.endlessrunner;
 
+import android.support.annotation.NonNull;
+
 /**
  * Created by Noxim on 2017-11-12.
  */
 
-public class User
+public class User implements Comparable<User>
 {
     String userName;
     int highscore;
@@ -34,5 +36,17 @@ public class User
     {
         this.userName = usrname;
         this.highscore = Hs;
+    }
+
+
+    @Override
+    public int compareTo(@NonNull User o) {
+        if (this.highscore > o.getHighscore()) {
+            return 1;
+        }
+        else if (this.highscore < o.getHighscore()) {
+            return -1;
+        }
+        else return 0;
     }
 }

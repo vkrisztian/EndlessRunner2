@@ -16,6 +16,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.StreamTokenizer;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -33,11 +35,13 @@ public class HighScoreActivity extends AppCompatActivity {
 
 
         loadFile();
+        Collections.sort(Users, new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return o1.compareTo(o2);
+            }
+        });
 
-        TextView tv = (TextView) findViewById(R.id.User1);
-
-        User us = Users.get(0);
-        tv.setText(us.getUserName()+" "+us.getHighscore());
 
 
 
@@ -70,6 +74,8 @@ public class HighScoreActivity extends AppCompatActivity {
 
         }
     }
+
+
 
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
