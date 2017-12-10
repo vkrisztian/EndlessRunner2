@@ -42,7 +42,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText et = (EditText) dialog1.findViewById(R.id.userName);
+
                 username = et.getText().toString();
+                if(username.contains("\n"))
+                {
+                    username = username.replace("\n","");
+                }
                 dialog1.dismiss();
                 Intent game = new Intent(MainActivity.this,GameActivity.class);
                 game.putExtra("usrname",username);
